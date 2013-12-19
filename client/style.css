@@ -1,15 +1,32 @@
+html {
+	height: 100%;
+}
+
 body {
 	padding-top: 60px;
+	height: 100%;
 }
+
 
 .limited-width {
 	max-width: 960px;
 }
 
+.wrap {
+	min-height: 100%;
+}
+
+.content {
+	overflow: auto;
+	padding-bottom: 320px;
+}
+
 footer {
+	position: relative;
 	background-color: green;
 	border-top: 3px #101010 solid;
 	height: 300px;
+	margin-top: -300px;
 	padding-top: 10px;
 	clear: both;
 }

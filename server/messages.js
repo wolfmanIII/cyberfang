@@ -3,7 +3,7 @@ Meteor.publish("all-messages", function () {
 });
 
 Messages.allow({
-        insert: function () { return true; },
-        update: function () { return true; },
-        remove: function () { return true; } 
-      });
+	insert: function () { return true; },
+	update: function () { return true; },
+	remove: function () { return true; } 
+});

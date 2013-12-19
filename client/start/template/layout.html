@@ -1,0 +1,19 @@
+<template name="layout">
+	
+	<div class="container limited-width">
+		
+		<div class="row">
+
+			<div class="col-md-2">
+				{{yield 'lside'}}
+			</div>
+
+			<div class="col-md-10">
+				{{yield}}
+			</div>
+
+		</div>
+
+	</div>
+
+</template>

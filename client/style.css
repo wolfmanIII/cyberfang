@@ -1,0 +1,7 @@
+body {
+	padding-top: 60px;
+}
+
+.limited-width {
+	max-width: 960px;
+}

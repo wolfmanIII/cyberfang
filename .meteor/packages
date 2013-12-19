@@ -6,7 +6,5 @@
 standard-app-packages
 preserve-inputs
 iron-router
-accounts-password
-accounts-ui
 bootstrap-3
 font-awesome

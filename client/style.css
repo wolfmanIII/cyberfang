@@ -5,3 +5,15 @@ body {
 .limited-width {
 	max-width: 960px;
 }
+
+footer {
+	background-color: green;
+	border-top: 3px #101010 solid;
+	height: 300px;
+	padding-top: 10px;
+	clear: both;
+}
+
+.lside {
+	
+}

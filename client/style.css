@@ -7,7 +7,6 @@ body {
 	height: 100%;
 }
 
-
 .limited-width {
 	max-width: 960px;
 }
@@ -18,15 +17,15 @@ body {
 
 .content {
 	overflow: auto;
-	padding-bottom: 320px;
+	padding-bottom: 220px;
 }
 
 footer {
 	position: relative;
-	background-color: green;
-	border-top: 3px #101010 solid;
-	height: 300px;
-	margin-top: -300px;
+	background-color: #222222;
+	border-top: 3px #3c3c3c solid;
+	height: 200px;
+	margin-top: -200px;
 	padding-top: 10px;
 	clear: both;
 }

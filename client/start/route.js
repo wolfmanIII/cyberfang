@@ -4,9 +4,6 @@ Router.map(function () {
 		path: '/',
 		template: 'home',
 		layoutTemplate: 'layout',
-		yieldTemplates: {
-			'lside': {to: 'lside'}
-		},
 		after: function () {
 			document.title = 'Home Try-Meteor';
 		}
@@ -15,7 +12,7 @@ Router.map(function () {
 	this.route('messages', {
 		path: '/messages',
 		template: 'all-messages',
-		layoutTemplate: 'layout',
+		layoutTemplate: 'layout-2-col',
 		yieldTemplates: {
 			'lside': {to: 'lside'}
 		},

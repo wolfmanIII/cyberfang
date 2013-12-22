@@ -4,9 +4,7 @@ Router.map(function () {
 		template: 'login',
 		layoutTemplate: 'layout',
 		before: function() {
-			if ( Meteor.user() ) {
-				this.redirect('profile');
-			}
+			Meteor.logout();
 		},
 		after: function () {
 			document.title = "Login";
@@ -15,13 +13,9 @@ Router.map(function () {
 
 	this.route('logout', {
 		path: '/logout',
-		template: 'logout',
-		layoutTemplate: 'layout',
         before: function() {
 			Meteor.logout();
-		},
-		after: function () {
-			document.title = "Logout";
+			this.redirect('login');
 		}
 	});
 

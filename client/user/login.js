@@ -1,8 +1,10 @@
 
-Template.login.events({'submit' : function() {
-    login();
-    event.preventDefault();
-}});
+Template.login.events({
+	'submit' : function(event) {
+    	login();
+    	event.preventDefault();
+	}
+});
 
 function login() {
 	Meteor.loginWithPassword(email.value, password.value, function(error){

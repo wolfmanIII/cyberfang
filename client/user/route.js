@@ -8,6 +8,7 @@ Router.map(function () {
 		},
 		after: function () {
 			document.title = "Login";
+			//clearSessionAlertMessages();
 		}
 	});
 
@@ -15,7 +16,10 @@ Router.map(function () {
 		path: '/logout',
         before: function() {
 			Meteor.logout();
-			this.redirect('login');
+			this.redirect('/login');
+		},
+		after: function() {
+			//clearSessionAlertMessages();
 		}
 	});
 
@@ -28,11 +32,12 @@ Router.map(function () {
 		},
 		before: function() {
 			if ( !Meteor.user() ) {
-				this.redirect("login")
+				this.redirect("/login")
 			}
 		},
 		after: function () {
 			document.title = "Profile";
+			//clearSessionAlertMessages();
 		}
 	});
 

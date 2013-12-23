@@ -7,7 +7,13 @@ html {
 body {
 	padding-top: 60px;
 	height: 100%;
-	font-family: Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: Monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+}
+
+.brand {
+	font-size: 30px;
+	font-family: Ubuntu;
 }
 
 h1,
@@ -22,7 +28,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .limited-width {

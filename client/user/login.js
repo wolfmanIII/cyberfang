@@ -9,8 +9,13 @@ Template.login.events({
 function login() {
 	Meteor.loginWithPassword(email.value, password.value, function(error){
 		if ( error ) {
-			Router.go('login');
+			//Session.set("ERROR_MESSAGE", error.message);
+			Meteor.render( function() {
+				return Template.alert_boxes({errorMessage: error.message});
+			});
+			Deps.flush();
 		} else {
+			//Session.set("SUCCESS_MESSAGE", "Login eseguito con successo!");
 			Router.go('profile');
 		}
 	});

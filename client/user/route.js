@@ -3,24 +3,26 @@ Router.map(function () {
 		path: '/login',
 		template: 'login',
 		layoutTemplate: 'layout',
-		before: function() {
-			Meteor.logout();
-		},
 		after: function () {
 			document.title = "Login";
 		}
 	});
 
-	this.route('logout', {
+	/*this.route('logout', {
 		path: '/logout',
+		template: 'logout',
+		layoutTemplate: 'layout',
         before: function() {
-			Meteor.logout();
-			this.redirect('/login');
+			Meteor.logout(function(error) {
+				if ( error ) {
+					console.log(error);
+				}
+			});
 		},
 		unload: function() {
 			clearSessionAlertMessages();
 		}
-	});
+	});*/
 
 	this.route('profile', {
 		path: '/profile',
@@ -31,7 +33,7 @@ Router.map(function () {
 		},
 		before: function() {
 			if ( !Meteor.user() ) {
-				this.redirect("/login")
+				this.redirect('login');
 			}
 		},
 		after: function () {

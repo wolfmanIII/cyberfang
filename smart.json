@@ -2,6 +2,7 @@
   "packages": {
     "iron-router": {},
     "font-awesome": {},
-    "bootstrap-cyborg": {}
+    "bootstrap-cyborg": {},
+    "crypto-md5": {}
   }
 }

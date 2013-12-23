@@ -8,6 +8,7 @@ Template.login.events({
 
 function login() {
 	Meteor.loginWithPassword(email.value, password.value, function(error){
+		clearSessionAlertMessages();
 		if ( error ) {
 			Session.set("ERROR_MESSAGE", error.message);
 		} else {

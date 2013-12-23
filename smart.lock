@@ -4,7 +4,8 @@
     "basePackages": {
       "iron-router": {},
       "font-awesome": {},
-      "bootstrap-cyborg": {}
+      "bootstrap-cyborg": {},
+      "crypto-md5": {}
     },
     "packages": {
       "iron-router": {
@@ -21,6 +22,16 @@
         "git": "https://github.com/and-fri/meteor-bootstrap-cyborg.git",
         "tag": "v0.0.2",
         "commit": "d066ef13555ff79ebf99eac058b9f1dc37442060"
+      },
+      "crypto-md5": {
+        "git": "https://github.com/oortcloud/meteor-crypto-md5.git",
+        "tag": "v3.1.2.2",
+        "commit": "75bbb3eeace302122d3554a6212a6fe92553fa18"
+      },
+      "crypto-base": {
+        "git": "https://github.com/oortcloud/meteor-crypto-base.git",
+        "tag": "v3.1.2.1",
+        "commit": "5df8d82a0595553415bbfae2930c6ecbeece5794"
       }
     }
   }

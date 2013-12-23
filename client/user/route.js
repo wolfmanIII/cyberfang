@@ -8,7 +8,6 @@ Router.map(function () {
 		},
 		after: function () {
 			document.title = "Login";
-			//clearSessionAlertMessages();
 		}
 	});
 
@@ -18,8 +17,8 @@ Router.map(function () {
 			Meteor.logout();
 			this.redirect('/login');
 		},
-		after: function() {
-			//clearSessionAlertMessages();
+		unload: function() {
+			clearSessionAlertMessages();
 		}
 	});
 
@@ -37,8 +36,11 @@ Router.map(function () {
 		},
 		after: function () {
 			document.title = "Profile";
-			//clearSessionAlertMessages();
+		},
+		unload: function() {
+			clearSessionAlertMessages();
 		}
+		
 	});
 
 });

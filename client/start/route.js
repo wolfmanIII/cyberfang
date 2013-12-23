@@ -6,6 +6,9 @@ Router.map(function () {
 		layoutTemplate: 'layout',
 		after: function () {
 			document.title = 'Home Try-Meteor';
+		},
+		unload: function() {
+			clearSessionAlertMessages();
 		}
 	});
 
@@ -22,7 +25,10 @@ Router.map(function () {
 		waitOn: function () {
 			Meteor.subscribe("all-messages");
 		},
-		data: { messages: Messages.find() }
+		data: { messages: Messages.find() },
+		unload: function() {
+			clearSessionAlertMessages();
+		}
 	});
 
 });

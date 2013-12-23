@@ -6,9 +6,9 @@
 		</div>
 	{{/if}}
 
-	{{#if errorMessage}}
+	{{#if checkSessionValue "ERROR_MESSAGE"}}
 		<div id="danger-box" class="alert alert-danger">
-			{{errorMessage}}
+			{{getSessionValue "ERROR_MESSAGE"}}
 		</div>
 	{{/if}}
 

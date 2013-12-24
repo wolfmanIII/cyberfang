@@ -13,3 +13,17 @@ Handlebars.registerHelper('checkSessionValue',function(input){
 		return true;
 	}
 });
+
+Handlebars.registerHelper('shellMessage', function(command) {
+	var message = "";
+	var user = Meteor.user();
+	var shell = "<span style='color: yellow'><b>";
+	var back = "@cyberfang:~/$</b></span> ";
+	if ( user ) {
+		shell += user.username + back; 
+	} else {
+		shell += "rogue" + back;
+	}
+	str = shell + command + "<br>" + shell;
+	return str;
+});

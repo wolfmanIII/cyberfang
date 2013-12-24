@@ -2,26 +2,26 @@
 
 	{{#if checkSessionValue "SUCCESS_MESSAGE"}}
 		<div id="success-box" class="alert alert-success">
-			{{getSessionValue "SUCCESS_MESSAGE"}}
+			{{{shellMessage "command"}}}{{getSessionValue "SUCCESS_MESSAGE"}}
 		</div>
 	{{/if}}
 
 	{{#if checkSessionValue "ERROR_MESSAGE"}}
 		<div id="danger-box" class="alert alert-danger">
-			{{getSessionValue "ERROR_MESSAGE"}}
+			{{{shellMessage "command"}}}{{getSessionValue "ERROR_MESSAGE"}}
 		</div>
 	{{/if}}
 
 	
 	{{#if checkSessionValue "INFO_MESSAGE"}}
 		<div id="info-box" class="alert alert-info">
-			{{getSessionValue "INFO_MESSAGE"}}
+			{{shellMessage "command"}}{{getSessionValue "INFO_MESSAGE"}}
 		</div>
 	{{/if}}
 	
 	{{#if checkSessionValue "WARNING_MESSAGE"}}
 		<div id="warning-box" class="alert alert-warning">
-			{{getSessionValue "WARNING_MESSAGE"}}
+			{{shellMessage "command"}}{{getSessionValue "WARNING_MESSAGE"}}
 		</div>
 	{{/if}}
 

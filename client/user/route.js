@@ -8,21 +8,17 @@ Router.map(function () {
 		}
 	});
 
-	/*this.route('logout', {
+	  this.route('logout', {
 		path: '/logout',
 		template: 'logout',
 		layoutTemplate: 'layout',
-        before: function() {
-			Meteor.logout(function(error) {
-				if ( error ) {
-					console.log(error);
-				}
-			});
+        after: function() {
+			Meteor.logout();
 		},
 		unload: function() {
 			clearSessionAlertMessages();
 		}
-	});*/
+	});
 
 	this.route('profile', {
 		path: '/profile',

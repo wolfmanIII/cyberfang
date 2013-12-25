@@ -1,27 +1,27 @@
 <template name="alert_boxes">
 
-	{{#if checkSessionValue "SUCCESS_MESSAGE"}}
+	{{#if getSessionMessage "SUCCESS"}}
 		<div id="success-box" class="alert alert-success">
-			{{{shellMessage "command"}}}{{getSessionValue "SUCCESS_MESSAGE"}}
+			{{{shellMessage "command"}}}{{getSessionMessage "SUCCESS"}}
 		</div>
 	{{/if}}
 
-	{{#if checkSessionValue "ERROR_MESSAGE"}}
+	{{#if getSessionMessage "ERROR"}}
 		<div id="danger-box" class="alert alert-danger">
-			{{{shellMessage "command"}}}{{getSessionValue "ERROR_MESSAGE"}}
+			{{{shellMessage "command"}}}{{getSessionMessage "ERROR"}}
 		</div>
 	{{/if}}
 
 	
-	{{#if checkSessionValue "INFO_MESSAGE"}}
+	{{#if getSessionMessage "INFO"}}
 		<div id="info-box" class="alert alert-info">
-			{{shellMessage "command"}}{{getSessionValue "INFO_MESSAGE"}}
+			{{shellMessage "command"}}{{getSessionMessage "INFO"}}
 		</div>
 	{{/if}}
 	
-	{{#if checkSessionValue "WARNING_MESSAGE"}}
+	{{#if getSessionMessage "WARNING"}}
 		<div id="warning-box" class="alert alert-warning">
-			{{shellMessage "command"}}{{getSessionValue "WARNING_MESSAGE"}}
+			{{shellMessage "command"}}{{getSessionMesssage "WARNING"}}
 		</div>
 	{{/if}}
 

@@ -14,16 +14,20 @@ Handlebars.registerHelper('checkSessionValue',function(input){
 	}
 });
 
-Handlebars.registerHelper('shellMessage', function(command) {
+Handlebars.registerHelper('shellMessage', function(message) {
 	var message = "";
 	var user = Meteor.user();
 	var shell = "<span style='color: yellow'><b>";
 	var back = "@cyberfang:~/$</b></span> ";
 	if ( user ) {
-		shell += user.username + back; 
+		shell += user.username + back + " " + getSessionObjValue("MESSAGE", "COMMAND") + "<br>";
 	} else {
-		shell += "rogue" + back;
+		shell += "guest" + back + " " + getSessionObjValue("MESSAGE", "COMMAND") + "<br>";
 	}
-	str = shell + command + "<br>" + shell;
+	str = shell + " " + message;
 	return str;
+});
+
+Handlebars.registerHelper('getSessionMessage', function(input) {
+	return getSessionObjValue('MESSAGE', input);
 });

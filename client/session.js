@@ -1,7 +1,22 @@
 
 clearSessionAlertMessages = function() {
-	delete Session.keys['SUCCESS_MESSAGE'];
-	delete Session.keys['ERROR_MESSAGE'];
-	delete Session.keys['INFO_MESSAGE'];
-	delete Session.keys['WARNING_MESSAGE'];	
+	delete Session.keys['MESSAGE'];
+}
+
+setSessionObjKey = function(name, key, value) {
+	sObj = Session.get(name);
+	if ( sObj == null ) {
+		sObj = {};
+	}
+	sObj[key] = value;
+	Session.set(name, sObj);
+}
+
+getSessionObjValue = function(name, key) {
+	sObj = Session.get(name);
+	if ( sObj != null ) {
+		return sObj[key];
+	} else {
+		return null;
+	}
 }

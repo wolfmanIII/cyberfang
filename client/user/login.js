@@ -12,9 +12,11 @@ function login() {
 	Meteor.loginWithPassword(valEmail, valPassword, function(error){
 		clearSessionAlertMessages();
 		if ( error ) {
-			Session.set("ERROR_MESSAGE", error.message);
+			setSessionObjKey("MESSAGE", "ERROR", error.message);
+			setSessionObjKey("MESSAGE", "COMMAND", "login");
 		} else {
-			Session.set("SUCCESS_MESSAGE", "Login eseguito con successo!");
+			setSessionObjKey("MESSAGE", "ERROR", "Login eseguito con successo!");
+			setSessionObjKey("MESSAGE", "COMMAND", "login");
 			Router.go('profile');
 		}
 	});

@@ -13,6 +13,7 @@ Router.map(function () {
 		template: 'logout',
 		layoutTemplate: 'layout',
         after: function() {
+			setSessionObjKey("MESSAGE", "COMMAND", "logout");
 			Meteor.logout();
 		},
 		unload: function() {

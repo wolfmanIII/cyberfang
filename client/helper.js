@@ -14,8 +14,7 @@ Handlebars.registerHelper('checkSessionValue',function(input){
 	}
 });
 
-Handlebars.registerHelper('shellMessage', function(message) {
-	var message = "";
+Handlebars.registerHelper('shellMessage', function() {
 	var user = Meteor.user();
 	var shell = "<span style='color: yellow'><b>";
 	var back = "@cyberfang:~/$</b></span> ";
@@ -24,8 +23,7 @@ Handlebars.registerHelper('shellMessage', function(message) {
 	} else {
 		shell += "guest" + back + " " + getSessionObjValue("MESSAGE", "COMMAND") + "<br>";
 	}
-	str = shell + " " + message;
-	return str;
+	return shell;
 });
 
 Handlebars.registerHelper('getSessionMessage', function(input) {

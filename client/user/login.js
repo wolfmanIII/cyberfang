@@ -10,17 +10,17 @@ function login() {
 	var valEmail = $("#email").attr('value');
 	var valPassword = $("#password").attr('value');
 	Meteor.loginWithPassword(valEmail, valPassword, function(error){
-		clearSessionAlertMessages();
+		clearSessionMessages();
 		if ( error ) {
-			setSessionObjKey("MESSAGE", "ERROR", error.message);
-			setSessionObjKey("MESSAGE", "COMMAND", "login");
+			setSessionObjKey("MESSAGES", "ERROR", error.message);
+			setSessionObjKey("MESSAGES", "COMMAND", "login");
 		} else {
-			setSessionObjKey("MESSAGE", "COMMAND", "login");
+			setSessionObjKey("MESSAGES", "COMMAND", "login");
 			var user = Meteor.user();
 			if ( !user.emails[0].verified ) {
-				setSessionObjKey("MESSAGE", "WARNING", "Login eseguito con successo! Attenzione indirizzo email non verificato!");
+				setSessionObjKey("MESSAGES", "WARNING", "Login eseguito con successo! Attenzione indirizzo email non verificato!");
 			} else {
-				setSessionObjKey("MESSAGE", "SUCCESS", "Login eseguito con successo!");
+				setSessionObjKey("MESSAGES", "SUCCESS", "Login eseguito con successo!");
 			}
 			Router.go('profile');
 		}

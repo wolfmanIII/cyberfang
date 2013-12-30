@@ -1,6 +1,6 @@
 
-clearSessionAlertMessages = function() {
-	delete Session.keys['MESSAGE'];
+clearSessionMessages = function() {
+	delete Session.keys['MESSAGES'];
 }
 
 setSessionObjKey = function(name, key, value) {

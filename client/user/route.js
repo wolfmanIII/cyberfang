@@ -13,11 +13,11 @@ Router.map(function () {
 		template: 'logout',
 		layoutTemplate: 'layout',
         after: function() {
-			setSessionObjKey("MESSAGE", "COMMAND", "logout");
+			setSessionObjKey("MESSAGES", "COMMAND", "logout");
 			Meteor.logout();
 		},
 		unload: function() {
-			clearSessionAlertMessages();
+			clearSessionMessages();
 		}
 	});
 
@@ -28,17 +28,17 @@ Router.map(function () {
 		yieldTemplates: {
 			'lside': {to: 'lside'}
 		},
-		before: function() {
-			var user = Meteor.user();
-			if ( !user ) {
+		before: function () {
+			if ( Meteor.userId() == null ) {
 				this.redirect('login');
 			}
 		},
 		after: function () {
 			document.title = "Profile";
+			
 		},
 		unload: function() {
-			clearSessionAlertMessages();
+			clearSessionMessages();
 		}
 		
 	});

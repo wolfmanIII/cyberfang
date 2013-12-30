@@ -8,7 +8,7 @@ Router.map(function () {
 			document.title = 'Home Try-Meteor';
 		},
 		unload: function() {
-			clearSessionAlertMessages();
+			clearSessionMessages();
 		}
 	});
 
@@ -27,7 +27,7 @@ Router.map(function () {
 		},
 		data: { messages: Messages.find() },
 		unload: function() {
-			clearSessionAlertMessages();
+			clearSessionMessages();
 		}
 	});
 

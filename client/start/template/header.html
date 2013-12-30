@@ -34,9 +34,9 @@
 				  	</li>
 					<li>
 						{{#if currentUser}}
-							<a href="{{pathFor 'profile'}}">Private</a>
+							<a href="{{pathFor 'profile'}}">{{currentUser.username}}</a>
 						{{else}}
-							<a href="{{pathFor 'login'}}">Private</a>
+							<a href="{{pathFor 'login'}}">Login</a>
 						{{/if}}
 					</li>
 					{{#if currentUser}}

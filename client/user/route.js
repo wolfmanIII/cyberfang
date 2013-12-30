@@ -29,7 +29,8 @@ Router.map(function () {
 			'lside': {to: 'lside'}
 		},
 		before: function() {
-			if ( !Meteor.user() ) {
+			var user = Meteor.user();
+			if ( !user ) {
 				this.redirect('login');
 			}
 		},

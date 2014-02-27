@@ -4,7 +4,7 @@ Router.map(function () {
 		template: 'login',
 		layoutTemplate: 'layout',
 		after: function () {
-			document.title = "Login";
+			document.title = "Cyberfang Login";
 		}
 	});
 
@@ -15,6 +15,7 @@ Router.map(function () {
         after: function() {
 			setSessionObjKey("MESSAGES", "COMMAND", "logout");
 			Meteor.logout();
+			document.title = "Cyberfang Logout";
 		},
 		unload: function() {
 			clearSessionMessages();
@@ -34,7 +35,7 @@ Router.map(function () {
 			}
 		},
 		after: function () {
-			document.title = "Profile";
+			document.title = "Cyberfang User Profile";
 			
 		},
 		unload: function() {

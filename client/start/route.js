@@ -5,7 +5,7 @@ Router.map(function () {
 		template: 'home',
 		layoutTemplate: 'layout',
 		after: function () {
-			document.title = 'Home Try-Meteor';
+			document.title = 'Cyberfang Home';
 		},
 		unload: function() {
 			clearSessionMessages();
@@ -20,7 +20,7 @@ Router.map(function () {
 			'lside': {to: 'lside'}
 		},
 		after: function () {
-			document.title = "Messages Try-Meteor";
+			document.title = "Cyberfang messages";
 		},
 		waitOn: function () {
 			Meteor.subscribe("all-messages");

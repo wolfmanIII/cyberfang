@@ -15,7 +15,7 @@ Router.map(function () {
 	this.route('messages', {
 		path: '/messages',
 		template: 'all-messages',
-		layoutTemplate: 'layout-2-col',
+		layoutTemplate: 'layout2col',
 		yieldTemplates: {
 			'lside': {to: 'lside'}
 		},

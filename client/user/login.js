@@ -1,14 +1,14 @@
 
 Template.login.events({
-	'submit' : function(event) {
-    	login();
+	'submit #login-form' : function(event, t) {
+		login();
     	event.preventDefault();
 	}
 });
 
 function login() {
-	var valEmail = $("#email").attr('value');
-	var valPassword = $("#password").attr('value');
+	var valEmail = $('#email').val();
+	var valPassword = $('#password').val();
 	Meteor.loginWithPassword(valEmail, valPassword, function(error){
 		clearSessionMessages();
 		if ( error ) {

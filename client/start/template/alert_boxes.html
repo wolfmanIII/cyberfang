@@ -2,7 +2,10 @@
 
 	{{#if getSessionMessage "SUCCESS"}}
 		<div id="success-box" class="alert alert-success">
-			{{{shellMessage}}}{{getSessionMessage "SUCCESS"}}
+			{{{shellMessage}}}
+			<div id="ticker">
+				{{ getSessionMessage "SUCCESS" }}
+			</div>
 		</div>
 	{{/if}}
 

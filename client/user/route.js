@@ -17,6 +17,9 @@ Router.map(function () {
 			Meteor.logout();
 			document.title = "Cyberfang Logout";
 		},
+		load: function() {
+			tickerText("Disconnessione eseguita");
+		},
 		unload: function() {
 			clearSessionMessages();
 		}

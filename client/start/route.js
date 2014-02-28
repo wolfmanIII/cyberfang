@@ -31,4 +31,27 @@ Router.map(function () {
 		}
 	});
 
+	this.route('message', {
+		path: '/message/:_id',
+		template: 'message',
+		layoutTemplate: 'layout2col',
+		yieldTemplates: {
+			'lside': {to: 'lside'}
+		},
+		after: function () {
+			document.title = "Cyberfang message";
+		},
+		waitOn: function () {
+			Meteor.subscribe("message", this.params._id);
+		},
+		data: function (){
+    		var m = Messages.findOne({_id: this.params._id});
+   			var templateData = {mess: m};
+			return templateData;
+  		},
+		unload: function() {
+			clearSessionMessages();
+		}	
+	});
+
 });

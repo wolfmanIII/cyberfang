@@ -3,7 +3,7 @@
 	<h1>Tutti i messaggi</h1><hr>
 
 	{{#each messages}}
-		{{ subject }}<br>
+		{{ subject }} <a href="{{pathFor 'message'}}"><i class="fa fa-pencil"></i></a><br>
 	{{/each}}
 
 </template>

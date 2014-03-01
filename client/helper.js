@@ -62,19 +62,19 @@ Handlebars.registerHelper('tickerText', function (input) {
 
 
 tickerText = function (input) {
+	var text = input;
 	var ticker = function( i ){
-		if ( document.getElementById("ticker") != null ) {
-			var tick = $("#ticker").html();
-    		tick += input[i];
-			$("#ticker").html(tick);
-			i++;
-    		if( i == input.length ) {
-    		   return;
-			}
+		var tick = $("#ticker").html();
+		tick += text[i];
+		$("#ticker").html(tick);
+		i = i+1;
+		if( i == text.length ) {
+		   return;
 		}
-        Meteor.setTimeout( function(){
+	    Meteor.setTimeout( function() {
 			ticker( i );
 		}, 100);
-    };
+	};
 	ticker(0);
-}
+};
+

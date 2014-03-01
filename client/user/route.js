@@ -3,6 +3,11 @@ Router.map(function () {
 		path: '/login',
 		template: 'login',
 		layoutTemplate: 'layout',
+		before: function () {
+			if ( Meteor.userId() != null ) {
+				this.redirect('profile');
+			}
+		},
 		after: function () {
 			document.title = "Cyberfang Login";
 		}
@@ -14,11 +19,10 @@ Router.map(function () {
 		layoutTemplate: 'layout',
         after: function() {
 			setSessionObjKey("MESSAGES", "COMMAND", "logout");
-			Meteor.logout();
 			document.title = "Cyberfang Logout";
 		},
-		load: function() {
-			tickerText("Disconnessione eseguita");
+		data: {
+			message: "Disconnessione eseguita"
 		},
 		unload: function() {
 			clearSessionMessages();

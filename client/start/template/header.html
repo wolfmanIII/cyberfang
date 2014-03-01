@@ -30,6 +30,7 @@
 						  	<li><a href="#">Separated link</a></li>
 						  	<li class="divider"></li>
 						  	<li><a href="#">One more separated link</a></li>
+						  	<li><a href="{{pathFor 'messages'}}">Messaggi</a></li>
 					  	</ul>
 				  	</li>
 					<li>
@@ -40,7 +41,7 @@
 						{{/if}}
 					</li>
 					{{#if currentUser}}
-						<li><a id="logout" href="{{pathFor 'logout'}}"><i class="fa fa-sign-out"></i> Logout</a></li>
+						<li><a href="#" id="logout" ><i class="fa fa-sign-out"></i> Logout</a></li>
 					{{/if}}
 			  	</ul>
 				

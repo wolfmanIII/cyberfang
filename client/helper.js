@@ -42,31 +42,12 @@ Handlebars.registerHelper('getGravatarImage', function() {
 	}
 });
 
-Handlebars.registerHelper('tickerText', function (input) {
-	var ticker = function( i ){
-		if ( document.getElementById("ticker") != null ) {
-			var tick = $("#ticker").html();
-        	tick += input[i];
-			$("#ticker").html(tick);
-			i++;
-        	if( i == input.length ) {
-        	   return;
-			}
-		}
-        Meteor.setTimeout( function(){
-			ticker( i );
-		}, 100);
-    }
-	ticker(0);
-});
-
-
-tickerText = function (input) {
+tickerText = function (input, selector) {
 	var text = input;
 	var ticker = function( i ){
-		var tick = $("#ticker").html();
+		var tick = $(selector).html();
 		tick += text[i];
-		$("#ticker").html(tick);
+		$(selector).html(tick);
 		i = i+1;
 		if( i == text.length ) {
 		   return;

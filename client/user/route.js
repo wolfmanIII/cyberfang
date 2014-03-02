@@ -22,7 +22,7 @@ Router.map(function () {
 			document.title = "Cyberfang Logout";
 		},
 		data: {
-			message: "Disconnessione eseguita"
+			message: "Disconnessione eseguita con successo!"
 		},
 		unload: function() {
 			clearSessionMessages();

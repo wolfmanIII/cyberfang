@@ -25,7 +25,7 @@ Router.map(function () {
 		waitOn: function () {
 			Meteor.subscribe("all-messages");
 		},
-		data: { messages: Messages.find() },
+		data: { messages: Messages.find({}, { sort: {subject: ""} }) },
 		unload: function() {
 			clearSessionMessages();
 		}

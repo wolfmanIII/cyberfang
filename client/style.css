@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
+@import url(http://fonts.googleapis.com/css?family=Iceland);
 
 html {
 	height: 100%;
@@ -7,13 +8,13 @@ html {
 body {
 	padding-top: 90px;
 	height: 100%;
-	font-family: Monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 13px;
+	font-family: Iceland, Monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
 }
 
 .brand {
-	font-size: 30px;
-	font-family: Ubuntu;
+	font-size: 36px;
+	font-family: Iceland, Ubuntu;
 }
 
 h1,
@@ -28,7 +29,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: Monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Iceland, Monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .limited-width {
@@ -48,7 +49,7 @@ footer {
 	position: relative;
 	background-color: #222222;
 	border-top: 3px #3c3c3c solid;
-	height: 200px;
+	min-height: 200px;
 	margin-top: -200px;
 	padding-top: 10px;
 	clear: both;
@@ -59,6 +60,6 @@ footer {
 }
 
 .navsocial {
-	padding-top: 13px !important; 
+	padding-top: 10px !important; 
 	padding-bottom: 0px !important;
 }

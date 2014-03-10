@@ -17,11 +17,11 @@ Handlebars.registerHelper('checkSessionValue',function(input){
 Handlebars.registerHelper('shellMessage', function() {
 	var user = Meteor.user();
 	var shell = "<span style='color: yellow'><b>";
-	var back = "@cyberfang:~/$</b></span> ";
+	var back = "cyberfang:~/$</b></span> ";
 	if ( user ) {
-		shell += user.username + back + " " + getSessionObjValue("MESSAGES", "COMMAND") + "<br>";
+		shell += back + " " + getSessionObjValue("MESSAGES", "COMMAND") + "<br>";
 	} else {
-		shell += "guest" + back + " " + getSessionObjValue("MESSAGES", "COMMAND") + "<br>";
+		shell += back + " " + getSessionObjValue("MESSAGES", "COMMAND") + "<br>";
 	}
 	return shell;
 });

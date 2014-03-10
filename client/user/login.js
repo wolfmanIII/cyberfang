@@ -18,9 +18,9 @@ function login() {
 			setSessionObjKey("MESSAGES", "COMMAND", "login");
 			var user = Meteor.user();
 			if ( !user.emails[0].verified ) {
-				setSessionObjKey("MESSAGES", "WARNING", "Login eseguito con successo! Attenzione indirizzo email non verificato!");
+				setSessionObjKey("MESSAGES", "WARNING", "Login eseguito con successo. Attenzione " + user.username + "! Indirizzo email non verificato!");
 			} else {
-				setSessionObjKey("MESSAGES", "SUCCESS", "Login eseguito con successo!");
+				setSessionObjKey("MESSAGES", "SUCCESS", "Login eseguito con successo. Benvenuto " + user.username + "!");
 			}
 			Router.go('profile');
 		}

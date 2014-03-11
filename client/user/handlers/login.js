@@ -7,9 +7,9 @@ Template.login.events({
 });
 
 function login() {
-	var valEmail = $('#email').val();
+	var valUserame = $('#username').val().toLowerCase();
 	var valPassword = $('#password').val();
-	Meteor.loginWithPassword(valEmail, valPassword, function(error){
+	Meteor.loginWithPassword(valUserame, valPassword, function(error){
 		clearSessionMessages();
 		if ( error ) {
 			setSessionObjKey("MESSAGES", "ERROR", error.message);

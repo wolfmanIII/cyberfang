@@ -19,6 +19,15 @@ Router.map(function () {
 		yieldTemplates: {
 			'lside': {to: 'lside'}
 		},
+		before: function() {
+			console.log(location);
+			var user = Meteor.user();
+			if ( !user ) {
+				setSessionObjKey("MESSAGES", "COMMAND", "checking credentials");
+				setSessionObjKey("MESSAGES", "ERROR", "Devi eseguire il login per accedere!");
+				this.redirect("login?returnUrl=http://localhost:3000");
+			}
+		},
 		after: function () {
 			document.title = "Cyberfang messages";
 		},

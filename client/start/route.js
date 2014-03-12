@@ -24,7 +24,7 @@ Router.map(function () {
 			var user = Meteor.user();
 			if ( !user ) {
 				setSessionObjKey("MESSAGES", "COMMAND", "checking credentials");
-				setSessionObjKey("MESSAGES", "ERROR", "Devi eseguire il login per accedere alla sezione!");
+				setSessionObjKey("MESSAGES", "ERROR", "Devi eseguire il login per accedere!");
 				this.redirect("login?returnUrl=http://localhost:3000");
 			}
 		},

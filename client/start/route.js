@@ -5,7 +5,7 @@ Router.map(function () {
 		template: 'home',
 		layoutTemplate: 'layout',
 		after: function () {
-			document.title = 'Cyberfang Home Space';
+			document.title = 'Cyberfang Home';
 		},
 		unload: function() {
 			clearSessionMessages();

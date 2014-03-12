@@ -13,7 +13,7 @@ Router.map(function () {
 		}
 	});
 
-	  this.route('logout', {
+	this.route('logout', {
 		path: '/logout',
 		template: 'logout',
 		layoutTemplate: 'layout',

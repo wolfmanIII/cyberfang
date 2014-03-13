@@ -1,9 +1,28 @@
 <template name="message">
 
-	{{#with mess}}
-		<legend>{{ subject }}</legend>
-		<span id="ticker"></span>
-	{{/with}}
+	<div class="row">
+		<div class="col-md-9">
+			<div class="well">
+				
+				{{>alert_boxes}}
+				<legend>Messaggio</legend>
+				<form id="message-form"  name="message-form" role="form">
+					<input type="hidden" id="message_id" name="message_id" value="{{ mess._id }}">					
+			  		<div class="form-group">
+						<label for="subject">Oggetto</label>	
+				 		<input type="text" class="form-control" id="subject" name="subject" 
+		                       value="{{ mess.subject }}">
+				  	</div>
+					<div class="form-group">
+						<label for="subject">Testo</label>	
+				 		<textarea class="form-control" id="text" name="text" rows="5">{{ mess.text }}</textarea> 
+				  	</div>
+					<button type="submit" class="btn btn-default">Salva</button>
+				</form>
+
+			</div>
+		</div>
+	</div>
 	
 
 </template>

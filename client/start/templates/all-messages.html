@@ -1,9 +1,36 @@
 <template name="all-messages">
 	
-	<h1>Tutti i messaggi</h1><hr>
+	<div class="well">
 
-	{{#each messages}}
-		{{ subject }} <a href="{{pathFor 'message'}}"><i class="fa fa-pencil"></i></a><br>
-	{{/each}}
+		{{>alert_boxes}}
+		<legend>Tutti i messaggi</legend>
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Oggetto</th>
+					<th style="text-align: center; width: 5%;"></th>
+					<th style="text-align: center; width: 5%;"></th>
+				</tr>
+			</thead>
+			<tbody>
+			
+				{{#each messages}}
+
+				<tr>
+					<td>{{ subject }}</td>
+					<td style="text-align: center;">
+						<a href="{{pathFor 'message'}}"><i class="fa fa-pencil"></i></a>
+					</td>
+					<td style="text-align: center;">
+						<a href="{{pathFor 'message'}}"><i class="fa fa-trash-o"></i></a
+					</td>
+				</tr>
+
+				{{/each}}
+
+			</tbody>
+		</table>
+
+	</div>
 
 </template>

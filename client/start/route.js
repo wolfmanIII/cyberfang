@@ -20,7 +20,6 @@ Router.map(function () {
 			'lside': {to: 'lside'}
 		},
 		before: function() {
-			console.log(location);
 			var user = Meteor.user();
 			if ( !user ) {
 				setSessionObjKey("MESSAGES", "COMMAND", "checking credentials");
@@ -58,6 +57,21 @@ Router.map(function () {
    			var templateData = {mess: m};
 			return templateData;
   		},
+		unload: function() {
+			clearSessionMessages();
+		}	
+	});
+
+	this.route('message_new', {
+		path: '/message/new',
+		template: 'message',
+		layoutTemplate: 'layout2col',
+		yieldTemplates: {
+			'lside': {to: 'lside'}
+		},
+		after: function () {
+			document.title = "Cyberfang message";
+		},
 		unload: function() {
 			clearSessionMessages();
 		}	

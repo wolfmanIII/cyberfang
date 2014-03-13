@@ -6,10 +6,16 @@ Meteor.publish("message", function(message_id) {
 	return Messages.find({_id: message_id});
 });
 
-/*
-Messages.allow({
-	insert: function () { return true; },
-	update: function () { return true; },
-	remove: function () { return true; } 
+Meteor.methods({
+	save_message: function (message) {
+		Messages.upsert(
+		{
+			_id: message.m_id
+		}, 
+		{
+			subject: message.subject,
+			text: message.text 
+		});
+		return "Messaggio registrato correttamente!";
+	}
 });
-*/

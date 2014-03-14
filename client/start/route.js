@@ -8,7 +8,7 @@ Router.map(function () {
 			document.title = 'Cyberfang Home';
 		},
 		unload: function() {
-			clearSessionMessages();
+			clearCommonSessionObject();
 		}
 	});
 
@@ -24,18 +24,19 @@ Router.map(function () {
 			if ( !user ) {
 				setSessionObjKey("MESSAGES", "COMMAND", "checking credentials");
 				setSessionObjKey("MESSAGES", "ERROR", "Devi eseguire il login per accedere!");
-				this.redirect("login?returnUrl=http://localhost:3000");
+				Session.set("RETURN_URL", this.path);				
+				this.redirect("login");
 			}
 		},
 		after: function () {
-			document.title = "Cyberfang messages";
+			document.title = "Cyberfang In Box";
 		},
 		waitOn: function () {
 			Meteor.subscribe("all-messages");
 		},
 		data: { messages: Messages.find({}, { sort: {subject: ""} }) },
 		unload: function() {
-			clearSessionMessages();
+			clearCommonSessionObject();
 		}
 	});
 
@@ -58,7 +59,7 @@ Router.map(function () {
 			return templateData;
   		},
 		unload: function() {
-			clearSessionMessages();
+			clearCommonSessionObject();
 		}	
 	});
 
@@ -73,7 +74,7 @@ Router.map(function () {
 			document.title = "Cyberfang message";
 		},
 		unload: function() {
-			clearSessionMessages();
+			clearCommonSessionObject();
 		}	
 	});
 

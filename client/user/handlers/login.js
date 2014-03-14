@@ -21,7 +21,12 @@ function login() {
 			} else {
 				setSessionObjKey("MESSAGES", "SUCCESS", "Login eseguito con successo. Benvenuto " + user.username + "!");
 			}
-			Router.go('profile');
+			if ( Session.get("RETURN_URL") != null ) {
+				Router.go( Session.get("RETURN_URL") );			
+			} else {
+				Router.go('profile');
+			}
+			
 		}
 	});
 }

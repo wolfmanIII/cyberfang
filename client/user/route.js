@@ -25,7 +25,7 @@ Router.map(function () {
 			message: "Disconnessione eseguita con successo!"
 		},
 		unload: function() {
-			clearSessionMessages();
+			clearCommonSessionObject();
 		}
 	});
 
@@ -46,7 +46,7 @@ Router.map(function () {
 			
 		},
 		unload: function() {
-			clearSessionMessages();
+			clearCommonSessionObject();
 		}
 		
 	});

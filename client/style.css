@@ -63,3 +63,23 @@ footer {
 	padding-top: 10px !important; 
 	padding-bottom: 0px !important;
 }
+
+.alert-success {
+	background-color: #000 !important;
+	border: 2px solid #809a00;
+}
+
+.alert-warning {
+	background-color: #000 !important;
+	border: 2px solid #f05800;
+}
+
+.alert-danger {
+	background-color: #000 !important;
+	border: 2px solid #bd001f;
+}
+
+.alert-info {
+	background-color: #000 !important;
+	border: 2px solid #6e2caf;
+}

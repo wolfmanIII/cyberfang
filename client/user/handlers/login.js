@@ -13,7 +13,7 @@ function login() {
 		clearSessionMessages();
 		setSessionObjKey("MESSAGES", "COMMAND", "login");
 		if ( error ) {
-			setSessionObjKey("MESSAGES", "ERROR", error.message);
+			setSessionObjKey("MESSAGES", "ERROR", "Username e/o Password errati!");
 		} else {
 			var user = Meteor.user();
 			if ( !user.emails[0].verified ) {

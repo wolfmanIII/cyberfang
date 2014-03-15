@@ -20,8 +20,8 @@ Router.map(function () {
 			'lside': {to: 'lside'}
 		},
 		before: function() {
-			var user = Meteor.user();
-			if ( !user ) {
+			if ( Meteor.userId() == null ) {
+				clearSessionMessages();
 				setSessionObjKey("MESSAGES", "COMMAND", "checking credentials");
 				setSessionObjKey("MESSAGES", "ERROR", "Devi eseguire il login per accedere!");
 				Session.set("RETURN_URL", this.path);				
@@ -31,10 +31,12 @@ Router.map(function () {
 		after: function () {
 			document.title = "Cyberfang In Box";
 		},
-		waitOn: function () {
-			Meteor.subscribe("all-messages");
+		data: { messages: 
+			function() {
+				var list = Messages.find({}, { sort: {subject: ""} });
+				return list;
+			}
 		},
-		data: { messages: Messages.find({}, { sort: {subject: ""} }) },
 		unload: function() {
 			clearCommonSessionObject();
 		}
@@ -49,9 +51,6 @@ Router.map(function () {
 		},
 		after: function () {
 			document.title = "Cyberfang message";
-		},
-		waitOn: function () {
-			Meteor.subscribe("message", this.params._id);
 		},
 		data: function (){
     		var m = Messages.findOne({_id: this.params._id});

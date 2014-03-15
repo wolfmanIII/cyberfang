@@ -1,10 +1,13 @@
 <template name="all-messages">
 	
-	<div class="well">
+	
 
-		{{>alert_boxes}}
 		<legend>Tutti i messaggi</legend>
-		<table class="table table-bordered table-striped">
+		{{>alert_boxes}}
+		
+		{{#if messages.count}}
+		
+		<table class="table table-bordered table-striped table-hover">
 			<thead>
 				<tr>
 					<th>Oggetto</th>
@@ -29,7 +32,10 @@
 
 			</tbody>
 		</table>
+		
+		{{/if}}
+		
 
-	</div>
+	
 
 </template>

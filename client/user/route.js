@@ -18,11 +18,11 @@ Router.map(function () {
 		template: 'logout',
 		layoutTemplate: 'layout',
         after: function() {
-			setSessionObjKey("MESSAGES", "COMMAND", "logout");
-			document.title = "Cyberfang Logout";
-		},
-		data: {
-			message: "Disconnessione eseguita con successo!"
+        	document.title = "Cyberfang Logout";
+			Meteor.logout( function() {
+				setSessionObjKey("MESSAGES", "COMMAND", "logout");
+				setSessionObjKey("MESSAGES", "INFO", "Disconnessione eseguita con successo!");
+			});
 		},
 		unload: function() {
 			clearCommonSessionObject();

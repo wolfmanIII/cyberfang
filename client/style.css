@@ -84,3 +84,9 @@ footer {
 	background-color: #000 !important;
 	border: 2px solid #6e2caf;
 }
+
+.rounded {
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+}

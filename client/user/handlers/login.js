@@ -26,7 +26,6 @@ function login() {
 			} else {
 				Router.go('profile');
 			}
-			
 		}
 	});
 }

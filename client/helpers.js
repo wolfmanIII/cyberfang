@@ -49,7 +49,7 @@ tickerText = function (input, selector) {
 		}
 	    Meteor.setTimeout( function() {
 			ticker( i );
-		}, 50);
+		}, 30);
 	};
 	ticker(0);
 };

@@ -9,7 +9,7 @@ body {
 	padding-top: 90px;
 	height: 100%;
 	font-family: Iceland, Monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 }
 
 .brand {
@@ -55,6 +55,10 @@ footer {
 	clear: both;
 }
 
+.dropdown-menu {
+	font-size: 16px;
+}
+
 .gravatar-img {
 	text-align: center;
 	margin: auto;
@@ -65,24 +69,24 @@ footer {
 	padding-bottom: 0px !important;
 }
 
-.alert-success {
+.shell-success {
 	background-color: #000 !important;
-	border: 2px solid #809a00;
+	border: 4px solid #809a00;
 }
 
-.alert-warning {
+.shell-warning {
 	background-color: #000 !important;
-	border: 2px solid #f05800;
+	border: 4px solid #f05800;
 }
 
-.alert-danger {
+.shell-danger {
 	background-color: #000 !important;
-	border: 2px solid #bd001f;
+	border: 4px solid #bd001f;
 }
 
-.alert-info {
+.shell-info {
 	background-color: #000 !important;
-	border: 2px solid #6e2caf;
+	border: 4px solid #6e2caf;
 }
 
 .rounded {

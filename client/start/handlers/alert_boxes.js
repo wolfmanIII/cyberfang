@@ -19,4 +19,4 @@ Template.alert_boxes.rendered = function () {
 	if ( warning != null ) {
 		tickerText(warning, "#ticker");
 	}
-};
+}

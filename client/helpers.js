@@ -14,10 +14,15 @@ Handlebars.registerHelper('checkSessionValue',function(input){
 	}
 });
 
-Handlebars.registerHelper('shellMessage', function() {
+Handlebars.registerHelper('shellMessage', function(input) {
 	var user = Meteor.user();
 	var shell = "<span style='color: yellow'><b>cyberfang:~/$</b></span> ";
-	shell += getSessionObjValue("MESSAGES", "COMMAND") + "<br>";
+	if ( input.length > 0 ) {
+		shell += input + "<br>";
+	} else {
+		shell += getSessionObjValue("MESSAGES", "COMMAND") + "<br>";
+	}
+	//shell += getSessionObjValue("MESSAGES", "COMMAND") + "<br>";
 	return shell;
 });
 

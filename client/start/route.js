@@ -14,7 +14,7 @@ Router.map(function () {
 
 	this.route('messages', {
 		path: '/messages',
-		template: 'all-messages',
+		template: 'all_messages',
 		layoutTemplate: 'layout2col',
 		yieldTemplates: {
 			'lside': {to: 'lside'}
@@ -22,7 +22,7 @@ Router.map(function () {
 		before: function() {
 			if ( Meteor.userId() == null ) {
 				clearSessionMessages();
-				setSessionObjKey("MESSAGES", "COMMAND", "checking credentials");
+				setSessionObjKey("MESSAGES", "COMMAND", "check permission");
 				setSessionObjKey("MESSAGES", "ERROR", "Devi eseguire il login per accedere!");
 				Session.set("RETURN_URL", this.path);				
 				this.redirect("login");
@@ -34,7 +34,11 @@ Router.map(function () {
 		data: { messages: 
 			function() {
 				var list = Messages.find({}, { sort: {subject: ""} });
-				return list;
+				if ( list.count ) {
+					return list;
+				} else {
+					return null;
+				}
 			}
 		},
 		unload: function() {
@@ -49,13 +53,26 @@ Router.map(function () {
 		yieldTemplates: {
 			'lside': {to: 'lside'}
 		},
+		before: function() {
+			if ( Meteor.userId() == null ) {
+				clearSessionMessages();
+				setSessionObjKey("MESSAGES", "COMMAND", "check permission");
+				setSessionObjKey("MESSAGES", "ERROR", "Devi eseguire il login per accedere!");
+				Session.set("RETURN_URL", this.path);				
+				this.redirect("login");
+			}
+		},
 		after: function () {
 			document.title = "Cyberfang message";
 		},
 		data: function (){
     		var m = Messages.findOne({_id: this.params._id});
-   			var templateData = {mess: m};
-			return templateData;
+    		if ( m ) {
+   				var templateData = {mess: m};
+				return templateData;
+			} else {
+				return null;
+			}
   		},
 		unload: function() {
 			clearCommonSessionObject();
@@ -63,11 +80,20 @@ Router.map(function () {
 	});
 
 	this.route('message_new', {
-		path: '/message/new',
+		path: '/new/message',
 		template: 'message',
 		layoutTemplate: 'layout2col',
 		yieldTemplates: {
 			'lside': {to: 'lside'}
+		},
+		before: function() {
+			if ( Meteor.userId() == null ) {
+				clearSessionMessages();
+				setSessionObjKey("MESSAGES", "COMMAND", "check permission");
+				setSessionObjKey("MESSAGES", "ERROR", "Devi eseguire il login per accedere!");
+				Session.set("RETURN_URL", this.path);				
+				this.redirect("login");
+			}
 		},
 		after: function () {
 			document.title = "Cyberfang message";

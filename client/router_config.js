@@ -1,6 +1,7 @@
 
 Router.configure({
+	notFoundTemplate: "not_found",
 	waitOn: function () {
-	    return Meteor.subscribe("all-messages");
+	    return Meteor.subscribe("all_messages");
 	}
 });

@@ -1,4 +1,4 @@
-Meteor.publish("all-messages", function () {
+Meteor.publish("all_messages", function () {
 	return Messages.find();
 });
 

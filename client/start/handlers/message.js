@@ -18,3 +18,4 @@ Template.message.events({
 		Router.go("messages");
 	}
 });
+

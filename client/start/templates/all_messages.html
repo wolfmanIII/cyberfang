@@ -1,0 +1,47 @@
+<template name="all_messages">
+
+		<legend>Tutti i messaggi</legend>
+
+		{{>alert_boxes}}
+		
+		{{#if messages.count}}
+		
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>Oggetto</th>
+						<th style="text-align: center; width: 5%;"></th>
+						<th style="text-align: center; width: 5%;"></th>
+					</tr>
+				</thead>
+				<tbody>
+				
+					{{#each messages}}
+
+					<tr>
+						<td>{{ subject }}</td>
+						<td style="text-align: center;">
+							<a href="{{pathFor 'message'}}"><i class="fa fa-pencil"></i></a>
+						</td>
+						<td style="text-align: center;">
+						</td>
+					</tr>
+
+					{{/each}}
+
+				</tbody>
+			</table>
+
+		{{else}}
+		
+			<div class="alert alert-warning shell-warning">
+				{{{shellMessage "retrieve data"}}}
+				<span id="ticker_no_messages"></span>
+			</div>
+
+		{{/if}}
+		
+
+	
+
+</template>

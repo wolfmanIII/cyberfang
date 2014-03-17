@@ -2,14 +2,13 @@
 
 	<div class="well">
 	
-		{{>alert_boxes}}
-	
 		{{#with currentUser}}
 		<div class="row">
 			<div class="col-md-12">
 				<form class="form-horizontal">
 					<fieldset>
 						<legend>Profilo utente</legend>
+						{{>alert_boxes}}
 						<div class="form-group">
 							<label for="username" class="col-md-3 control-label">username</label>
 							<div class="col-md-6">

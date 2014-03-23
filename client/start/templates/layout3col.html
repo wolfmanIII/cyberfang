@@ -1,0 +1,31 @@
+<template name="layout3col">
+
+	<div class="wrap">
+
+		{{>header}}
+
+		<div class="content">
+			<div class="container limited-width">
+
+				<div class="row">
+
+					<div class="col-md-2">
+						{{yield 'lside'}}
+					</div>
+
+					<div class="col-md-8">
+						{{yield}}
+					</div>
+
+					<div class="col-md-2">
+					</div>
+	
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	{{>footer}}
+
+
+</template>

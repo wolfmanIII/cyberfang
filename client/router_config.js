@@ -1,7 +1,9 @@
 
 Router.configure({
+	layoutTemplate: "layout3col",
 	notFoundTemplate: "not_found",
 	waitOn: function () {
-	    return Meteor.subscribe("all_messages");
+	    Meteor.subscribe("all_messages");
+	    return;
 	}
 });

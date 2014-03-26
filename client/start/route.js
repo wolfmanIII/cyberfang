@@ -28,6 +28,7 @@ Router.map(function () {
 				this.redirect("login");
 			}
 		},
+		
 		after: function () {
 			document.title = "Cyberfang In Box";
 		},

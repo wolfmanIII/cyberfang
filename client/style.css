@@ -12,6 +12,18 @@ body {
 	font-size: 16px;
 }
 
+.align_center {
+	text-align: center;
+}
+
+.align_left {
+	text-align: left;
+}
+
+.align_right {
+	text-align: right;
+}
+
 .brand {
 	font-size: 36px;
 	font-family: Iceland, Ubuntu;

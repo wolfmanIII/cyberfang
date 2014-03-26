@@ -1,4 +1,5 @@
 Template.alert_boxes.rendered = function () {
+
 	var error = getSessionObjValue('MESSAGES', 'ERROR');
 	var success = getSessionObjValue('MESSAGES', 'SUCCESS');
 	var info = getSessionObjValue('MESSAGES', 'INFO');

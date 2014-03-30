@@ -3,12 +3,12 @@ Router.map(function () {
 		path: '/login',
 		template: 'login',
 		layoutTemplate: 'layout',
-		before: function () {
+		onBeforeAction: function () {
 			if ( Meteor.userId() != null ) {
 				this.redirect('profile');
 			}
 		},
-		after: function () {
+		onAfterAction: function () {
 			document.title = "Cyberfang Login";
 		}
 	});
@@ -17,14 +17,18 @@ Router.map(function () {
 		path: '/logout',
 		template: 'logout',
 		layoutTemplate: 'layout',
-        after: function() {
-        	document.title = "Cyberfang Logout";
+		onBeforeAction: function() {
 			Meteor.logout( function() {
+				clearCommonSessionObject();
 				setSessionObjKey("MESSAGES", "COMMAND", "logout");
 				setSessionObjKey("MESSAGES", "INFO", "Disconnessione eseguita con successo!");
 			});
+			return;
 		},
-		unload: function() {
+        onAfterAction: function() {
+        	document.title = "Cyberfang Logout";
+		},
+		onStop: function() {
 			clearCommonSessionObject();
 		}
 	});
@@ -33,19 +37,16 @@ Router.map(function () {
 		path: '/profile',
         template: 'profile',
 		layoutTemplate: 'layout2col',
-		yieldTemplates: {
-			'lside': {to: 'lside'}
-		},
-		before: function () {
+		onBeforeAction: function () {
 			if ( Meteor.userId() == null ) {
 				this.redirect('login');
 			}
 		},
-		after: function () {
+		onAfterAction: function () {
 			document.title = "Cyberfang User Profile";
 			
 		},
-		unload: function() {
+		onStop: function() {
 			clearCommonSessionObject();
 		}
 		

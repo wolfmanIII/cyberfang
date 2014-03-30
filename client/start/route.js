@@ -4,10 +4,10 @@ Router.map(function () {
 		path: '/',
 		template: 'home',
 		layoutTemplate: 'layout',
-		after: function () {
+		onAfterAction: function () {
 			document.title = 'Cyberfang Home';
 		},
-		unload: function() {
+		onStop: function() {
 			clearCommonSessionObject();
 		}
 	});
@@ -16,23 +16,23 @@ Router.map(function () {
 		path: '/messages',
 		template: 'all_messages',
 		layoutTemplate: 'layout2col',
-		yieldTemplates: {
-			'lside': {to: 'lside'}
-		},
-		before: function() {
-			if ( Meteor.userId() == null ) {
+		onBeforeAction: function() {
+			if ( !Meteor.userId() ) {
 				clearSessionMessages();
 				setSessionObjKey("MESSAGES", "COMMAND", "check permission");
 				setSessionObjKey("MESSAGES", "ERROR", "Devi eseguire il login per accedere!");
-				Session.set("RETURN_URL", this.path);				
+				Session.set("RETURN_URL", this.path);
 				this.redirect("login");
 			}
 		},
-		
-		after: function () {
+		onAfterAction: function () {
 			document.title = "Cyberfang In Box";
 		},
-		data: { messages: 
+		waitOn: function () {
+	    	Meteor.subscribe("all_messages");
+	    	return;
+		},
+		Data: { messages: 
 			function() {
 				var list = Messages.find({}, { sort: {subject: ""} });
 				if ( list.count ) {
@@ -42,7 +42,7 @@ Router.map(function () {
 				}
 			}
 		},
-		unload: function() {
+		onStop: function() {
 			clearCommonSessionObject();
 		}
 	});
@@ -51,10 +51,7 @@ Router.map(function () {
 		path: '/message/:_id',
 		template: 'message',
 		layoutTemplate: 'layout2col',
-		yieldTemplates: {
-			'lside': {to: 'lside'}
-		},
-		before: function() {
+		onBeforeAction: function() {
 			if ( Meteor.userId() == null ) {
 				clearSessionMessages();
 				setSessionObjKey("MESSAGES", "COMMAND", "check permission");
@@ -63,10 +60,10 @@ Router.map(function () {
 				this.redirect("login");
 			}
 		},
-		after: function () {
+		onAfterAction: function () {
 			document.title = "Cyberfang message";
 		},
-		data: function (){
+		Data: function (){
     		var m = Messages.findOne({_id: this.params._id});
     		if ( m ) {
    				var templateData = {mess: m};
@@ -75,7 +72,7 @@ Router.map(function () {
 				return null;
 			}
   		},
-		unload: function() {
+		onStop: function() {
 			clearCommonSessionObject();
 		}	
 	});
@@ -87,7 +84,7 @@ Router.map(function () {
 		yieldTemplates: {
 			'lside': {to: 'lside'}
 		},
-		before: function() {
+		onBeforeAction: function() {
 			if ( Meteor.userId() == null ) {
 				clearSessionMessages();
 				setSessionObjKey("MESSAGES", "COMMAND", "check permission");
@@ -96,10 +93,10 @@ Router.map(function () {
 				this.redirect("login");
 			}
 		},
-		after: function () {
+		onAfterAction: function () {
 			document.title = "Cyberfang message";
 		},
-		unload: function() {
+		onStop: function() {
 			clearCommonSessionObject();
 		}	
 	});

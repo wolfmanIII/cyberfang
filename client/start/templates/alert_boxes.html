@@ -3,14 +3,14 @@
 	{{#if getSessionMessage "SUCCESS"}}
 		<div id="success-box" class="alert alert-success shell-success">
 			{{{shellMessage}}}
-			<span id="ticker"></span>
+			<span id="tickerSuccess"></span>
 		</div>
 	{{/if}}
 
 	{{#if getSessionMessage "ERROR"}}
 		<div id="danger-box" class="alert alert-danger shell-danger">
 			{{{shellMessage}}}
-			<span id="ticker"></span>
+			<span id="tickerError"></span>
 		</div>
 	{{/if}}
 
@@ -18,14 +18,14 @@
 	{{#if getSessionMessage "INFO"}}
 		<div id="info-box" class="alert alert-info shell-info">
 			{{{shellMessage}}}
-			<span id="ticker"></span>
+			<span id="tickerInfo">{{getSessionMessage "INFO"}}</span>
 		</div>
 	{{/if}}
 	
 	{{#if getSessionMessage "WARNING"}}
 		<div id="warning-box" class="alert alert-warning shell-warning">
 			{{{shellMessage}}}
-			<span id="ticker"></span>
+			<span id="tickerWarning"></span>
 		</div>
 	{{/if}}
 

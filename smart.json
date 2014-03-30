@@ -1,8 +1,8 @@
 {
   "packages": {
-    "iron-router": {},
     "font-awesome": {},
     "bootstrap-cyborg": {},
-    "crypto-md5": {}
+    "crypto-md5": {},
+    "iron-router": {}
   }
 }

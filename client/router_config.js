@@ -1,6 +1,6 @@
-
+/*
 Router.configure({
-	layoutTemplate: "layout2col",
+	layoutTemplate: "layout",
 	yieldTemplates: {
 		'lside': {to: 'lside'}
 	},
@@ -9,4 +9,4 @@ Router.configure({
 	    Meteor.subscribe("all_messages");
 	    return;
 	}
-});
+});*/

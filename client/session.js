@@ -17,7 +17,7 @@ removeReturnUrl = function() {
 
 setSessionObjKey = function(name, key, value) {
 	sObj = Session.get(name);
-	if ( sObj == null ) {
+	if ( !sObj ) {
 		sObj = {};
 	}
 	sObj[key] = value;
@@ -26,7 +26,7 @@ setSessionObjKey = function(name, key, value) {
 
 getSessionObjValue = function(name, key) {
 	sObj = Session.get(name);
-	if ( sObj != null ) {
+	if ( sObj ) {
 		return sObj[key];
 	} else {
 		return null;

@@ -5,19 +5,19 @@ Template.alert_boxes.rendered = function () {
 	var info = getSessionObjValue('MESSAGES', 'INFO');
 	var warning = getSessionObjValue('MESSAGES', 'WARNING');
 	
-	if ( error != null ) {
-		tickerText(error, "#ticker");
+	if ( error ) {
+		tickerText(error, "#tickerError");
 	}
 	
-	if ( success != null ) {
-		tickerText(success, "#ticker");
+	if ( success ) {
+		tickerText(success, "#tickerSuccess");
 	}
 	
-	if ( info != null ) {
-		tickerText(info, "#ticker");
+	if ( info ) {
+		tickerText(info, "#tickerInfo");
 	}
 	
-	if ( warning != null ) {
-		tickerText(warning, "#ticker");
+	if ( warning ) {
+		tickerText(warning, "#tickerWarning");
 	}
 }

@@ -17,7 +17,7 @@ Handlebars.registerHelper('checkSessionValue',function(input){
 Handlebars.registerHelper('shellMessage', function(input) {
 	var user = Meteor.user();
 	var shell = "<span style='color: yellow'><b>cyberfang:~/$</b></span> ";
-	if ( input.length > 0 ) {
+	if ( input ) {
 		shell += input + "<br>";
 	} else {
 		shell += getSessionObjValue("MESSAGES", "COMMAND") + "<br>";
@@ -36,6 +36,15 @@ Handlebars.registerHelper('getGravatarImage', function() {
 		email = m.toLowerCase();
 		var hash = CryptoJS.MD5(email);
 		return img_add = "http://www.gravatar.com/avatar/" + hash + ".png?s=130";
+	} else {
+		return null;
+	}
+});
+
+Handlebars.registerHelper('getUserEmail', function() {
+	var user = Meteor.user();
+	if ( user ) { 
+		return user.emails[0].address;
 	} else {
 		return null;
 	}

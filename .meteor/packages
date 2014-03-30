@@ -4,8 +4,6 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-preserve-inputs
-iron-router
 font-awesome
 bootstrap-cyborg
 accounts-password
@@ -14,3 +12,4 @@ crypto-md5
 email
 jquery
 spiderable
+iron-router
